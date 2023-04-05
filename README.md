@@ -16,12 +16,13 @@ cd run_length_encoding
 python setup.py install
 ```
 ### 2. Datasets
-Here we provide the links to download the datasets used in our paper: PartImageNet-C and PascalPart-C:
+Here we provide the link to download the datasets used in our paper: PartImageNet-C and PascalPart-C:
 
 [Google Drive](https://drive.google.com/drive/folders/1LUVx_ObmIcc-GgVZcyCoSe7U27YhO4z2?usp=sharing)
 
 ### 3. Commands for training and evaluation:
 An example using ROCK(ResNeXt-101) for training and evaluation on PartImageNet dataset with TRADES-AWP+EMA training under epsilon = 8.
+
 Training:
 ```
 python trainseg_awp.py --config_path configs/PartImageNet/ --version PartImageNet_part_trades_101_awp_ema_8 --data_parallel --train
