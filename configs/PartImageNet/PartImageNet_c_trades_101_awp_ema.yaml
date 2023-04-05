@@ -1,0 +1,53 @@
+model:
+  name: resnext101
+  num_classes: 125
+
+num_classes: 125
+
+epsilon: 8.0
+single_step: 2.0
+warm_epochs: 0
+grad_clip: 5.0
+
+adv_train_type:
+  name: TradesLoss
+  alpha: 6.0
+  mtype: "cls"
+  num_steps: 5
+  eps: 8
+  step_size: 2.0
+  return_x: True
+
+
+awp: True
+awp_warmup: 20
+beta: 6.0
+awp_gamma: 0.005
+
+ema: True
+
+
+root: "/home/lixiao/ssd/PartImageNet/"
+subroot: "reduceannotations"
+finegrained: True
+knowledge: PartImageNet_connection
+
+amp: True
+batch_per_gpu: 32
+learning_rate: 0.1
+epochs: 300
+adv_eval_epoch: 0.9
+log_frequency: 20
+ignare_label: 255
+
+traindataset:
+  name: CocoDataset
+  mode: "train"
+  anns: "reduceannotations"
+  supercategory:  False
+
+testdataset:
+  name: CocoDataset
+  mode: "test"
+  anns: "reduceannotations"
+  supercategory:  False

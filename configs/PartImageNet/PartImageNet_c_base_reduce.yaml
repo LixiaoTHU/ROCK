@@ -1,0 +1,34 @@
+model:
+  name: ResNet50
+  cls: "standard"
+  num_classes: 125
+
+num_classes: 125
+
+epsilon: 1.0
+grad_clip: 5.0
+
+root: "/home/lixiao/ssd/PartImageNet/"
+subroot: "reduceannotations"
+finegrained: True
+knowledge: PartImageNet_connection
+
+amp: True
+batch_per_gpu: 32
+learning_rate: 0.1
+epochs: 200
+adv_eval_epoch: 0.9
+log_frequency: 20
+ignare_label: 255
+
+traindataset:
+  name: CocoDataset
+  mode: "train"
+  anns: "reduceannotations"
+  supercategory:  False
+
+testdataset:
+  name: CocoDataset
+  mode: "test"
+  anns: "reduceannotations"
+  supercategory:  False

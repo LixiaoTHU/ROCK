@@ -1,0 +1,39 @@
+model:
+  name: ResNet50
+  cls: "standard"
+  num_classes: 2
+
+num_classes: 2
+epsilon: 1.0
+
+root: "/home/lixiao/data/Face_Body/MERGE/"
+subroot: ""
+finegrained: False
+withat: False
+withknowledge: True
+knowledge: FaceBody_connection
+
+
+amp: True
+batch_per_gpu: 32
+learning_rate: 0.1
+epochs: 100
+adv_eval_epoch: 0.9
+log_frequency: 20
+ignare_label: 255
+
+traindataset:
+  name: FaceVOCDataset
+  list_path: "train.txt"
+  Part_Seg_folder: None
+  mode: "train" 
+  ignore_label: 255
+
+testdataset:
+  name: FaceVOCDataset
+  list_path: "val.txt"
+  Part_Seg_folder: None
+  mode: "test" 
+  ignore_label: 255
+  scale: False
+  mirror: False
