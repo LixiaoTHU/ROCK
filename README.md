@@ -12,6 +12,7 @@ Please see requirements.txt.
 Some noticeable dependencies:
 ```
 pip install torchattacks
+unzip run_length_encoding.zip
 cd run_length_encoding
 python setup.py install
 ```
