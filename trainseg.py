@@ -5,7 +5,7 @@ import models
 import argparse
 import utils
 from dataset import *
-from loss import FocalLoss, FewFocalLoss, FewFocalLoss_v2
+from loss import FocalLoss
 from thop import profile
 from judgement import Judgement
 from partattack import PartAttack
